@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:book_tickets/Screens/tickets_view.dart';
 import 'package:book_tickets/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -86,6 +87,69 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                     ],
                   ),
                 ),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "UpComing Flights",
+                      style: Style.headlineStyle2,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        print("You are clicking the button");
+                      },
+                      child: Text(
+                        "View All",
+                        style: Style.textStyle.copyWith(
+                          color: Style.primaryColor,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                SingleChildScrollView(
+                  padding: EdgeInsets.only(left: 20),
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      TicketsView(),
+                      TicketsView(),
+                      TicketsView(),
+                      TicketsView(),
+                      TicketsView(),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Hotels",
+                        style: Style.headlineStyle2,
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                          "View All",
+                          style: Style.textStyle.copyWith(
+                            color: Style.primaryColor,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           )
