@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:book_tickets/colors.dart';
 import 'package:book_tickets/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:book_tickets/Screens/Bottom_bar.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: primary,
-        primarySwatch: Colors.pink,
+        primarySwatch: CustomSwatch.customSwatch,
       ),
       home: MyBottomBar(),
     );

@@ -38,6 +38,7 @@ class _MyBottomBarState extends State<MyBottomBar> {
         child: _widgetOptions[selectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blue[50],
         currentIndex: selectedIndex,
         onTap: _tappedIndex,
         elevation: 10,

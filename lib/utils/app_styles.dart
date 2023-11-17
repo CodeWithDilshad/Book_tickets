@@ -9,6 +9,7 @@ class Style {
   static Color textColor = Color(0xFF3b3b3b);
   static Color bgColor = Color(0xFFeeedf2);
   static Color orangeColor = Color(0xFFF37B67);
+  static Color kakiColor = Color(0xFFd2bdb6);
   static TextStyle textStyle = TextStyle(
     fontSize: 16,
     color: textColor,

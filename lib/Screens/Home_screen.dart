@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:book_tickets/Screens/hotel_screen.dart';
 import 'package:book_tickets/Screens/tickets_view.dart';
+import 'package:book_tickets/utils/app_info_list.dart';
 import 'package:book_tickets/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +18,12 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0.0,
+        title: Text("Book Tickets"),
+        centerTitle: true,
+      ),
+      drawer: Drawer(),
       backgroundColor: Style.bgColor,
       body: ListView(
         children: [
@@ -24,7 +32,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: 40,
+                  height: 10,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -117,13 +125,13 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                   padding: EdgeInsets.only(left: 20),
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: [
-                      TicketsView(),
-                      TicketsView(),
-                      TicketsView(),
-                      TicketsView(),
-                      TicketsView(),
-                    ],
+                    children:ticketList
+                        .map(
+                          (singleTicket) => TicketsView(
+                            tickets: singleTicket,
+                          ),
+                        )
+                        .toList(),
                   ),
                 ),
                 SizedBox(
@@ -149,7 +157,20 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                       )
                     ],
                   ),
-                )
+                ),
+                SingleChildScrollView(
+                  padding: EdgeInsets.only(left: 20),
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: hotelList
+                        .map(
+                          (singleHotel) => HotelScreen(
+                            hotel: singleHotel,
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
               ],
             ),
           )
